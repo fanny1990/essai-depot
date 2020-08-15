@@ -13121,14 +13121,7 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
-<span class="kn">import</span> <span class="nn">plotly</span> <span class="k">as</span> <span class="nn">py</span>
-
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">nbinteract</span> <span class="k">as</span> <span class="nn">nbi</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nbinteract</span> <span class="k">as</span> <span class="nn">nbi</span>
 </pre></div>
 
     </div>
@@ -13151,7 +13144,15 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">1933</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;S. primaire&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly</span> <span class="k">as</span> <span class="nn">py</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">1933</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;S. primaire&#39;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span> <span class="mi">2238</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;S. secondaire&#39;</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">202</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Aéroport&#39;</span><span class="p">)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">12794</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">20000</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;S. tertiaire&#39;</span><span class="p">)</span>
@@ -13170,6 +13171,32 @@ div#notebook {
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    
+
+
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -13204,7 +13231,15 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">41</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;h/semaine&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly</span> <span class="k">as</span> <span class="nn">py</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">41</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;h/semaine&#39;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;congés/an&#39;</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">346490</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">300000</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">400000</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;ETP&#39;</span><span class="p">)</span>
 
@@ -13224,6 +13259,32 @@ div#notebook {
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    
+
+
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -13258,7 +13319,15 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">41</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;h/semaine&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly</span> <span class="k">as</span> <span class="nn">py</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">41</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;h/semaine&#39;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;congés/an&#39;</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">346490</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">300000</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span><span class="mi">400000</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;ETP&#39;</span><span class="p">)</span>
 
@@ -13298,6 +13367,32 @@ div#notebook {
     
 
 
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
+</div>
+
+</div>
+
+<div class="output_area">
+
+    
+
+
 
   <div class="output_subarea output_widget_view ">
     <button class="js-nbinteract-widget">
@@ -13326,28 +13421,14 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
 <span class="kn">import</span> <span class="nn">plotly</span> <span class="k">as</span> <span class="nn">py</span>
-</pre></div>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># le slider est l&#39;activité humaine dans un secteur économique, le modifier permettera de modifier les barres </span>
-<span class="c1"># d&#39;histogramme qui représente l&#39;intensité de consommation par heure. </span>
-
-<span class="c1"># Ici on essaye avec le secteur secondaire de 2017</span>
 
 <span class="k">def</span> <span class="nf">ha</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
@@ -13375,6 +13456,32 @@ div#notebook {
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    
+
+
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -13409,7 +13516,15 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly</span> <span class="k">as</span> <span class="nn">py</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
    
     <span class="n">bar</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Electricité&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaz&#39;</span><span class="p">,</span><span class="s1">&#39;Pétrole&#39;</span><span class="p">,</span> <span class="s1">&#39;Eau&#39;</span><span class="p">,</span> <span class="s1">&#39;EJP&#39;</span><span class="p">],</span>
@@ -13469,80 +13584,26 @@ div#notebook {
     
 
 
-
-  <div class="output_subarea output_widget_view ">
-    <button class="js-nbinteract-widget">
-      Loading widgets...
-    </button>
-  </div>
-
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
 </div>
 
 </div>
-</div>
-
-  </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Si-il-y-a-un-changement-dans-la-m&#233;thode-de-travail-par-exemple-le-t&#233;l&#233;travail-dans-le-secteur-tertiaire-ceci-aura-un-impact-sur-la-consommation-r&#233;sidentiel-au-niveau-annuel-et-en-intensit&#233;.-(-le-graphique-n'est-pas-tr&#232;s-int&#233;ressant)">Si il y a un changement dans la m&#233;thode de travail par exemple le t&#233;l&#233;travail dans le secteur tertiaire ceci aura un impact sur la consommation r&#233;sidentiel au niveau annuel et en intensit&#233;. ( le graphique n'est pas tr&#232;s int&#233;ressant)<a class="anchor-link" href="#Si-il-y-a-un-changement-dans-la-m&#233;thode-de-travail-par-exemple-le-t&#233;l&#233;travail-dans-le-secteur-tertiaire-ceci-aura-un-impact-sur-la-consommation-r&#233;sidentiel-au-niveau-annuel-et-en-intensit&#233;.-(-le-graphique-n'est-pas-tr&#232;s-int&#233;ressant)">&#182;</a></h3>
-</div>
-</div>
-</div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-   
-    <span class="n">bar</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Electricité&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaz&#39;</span><span class="p">,</span><span class="s1">&#39;Pétrole&#39;</span><span class="p">,</span> <span class="s1">&#39;Eau&#39;</span><span class="p">],</span>
-        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1314</span><span class="o">/</span><span class="n">b</span><span class="p">,</span> <span class="mi">958</span><span class="o">/</span><span class="n">b</span><span class="p">,</span> <span class="mi">3165</span><span class="o">/</span><span class="n">b</span><span class="p">,</span> <span class="mi">12794</span><span class="o">/</span><span class="n">b</span><span class="p">],</span>
-        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Consommation intensive secteur tertiaire&#39;</span><span class="p">,</span>
-        <span class="n">marker_color</span><span class="o">=</span><span class="s1">&#39;pink&#39;</span><span class="p">,</span>
-        <span class="n">hovertext</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Intensité de consommation en électricité: kWh par heure&#39;</span><span class="p">,</span> <span class="s1">&#39;Intensité de consommation de gaz en MJ par heure&#39;</span><span class="p">,</span>
-                           <span class="s1">&#39;Intensité de consommation du pétrole en MJ par heure&#39;</span><span class="p">,</span><span class="s1">&#39;Intensité de consommation en eau en L par heure&#39;</span>
-                  <span class="p">,</span><span class="s1">&#39;productivité économique en CHF/h&#39;</span><span class="p">],</span>
-            
-    <span class="p">)</span>  
-    <span class="n">bar1</span><span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Electricité&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaz&#39;</span><span class="p">,</span><span class="s1">&#39;Pétrole&#39;</span><span class="p">,</span> <span class="s1">&#39;Eau&#39;</span><span class="p">],</span>
-        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">676</span><span class="o">/</span><span class="p">(</span><span class="mi">3448</span><span class="o">+</span><span class="n">b</span><span class="p">),</span> <span class="mi">9496</span><span class="o">/</span><span class="p">(</span><span class="mi">3448</span><span class="o">+</span><span class="n">b</span><span class="p">),</span> <span class="mi">4779</span><span class="o">/</span><span class="p">(</span><span class="mi">3448</span><span class="o">+</span><span class="n">b</span><span class="p">),</span> <span class="mi">32529</span><span class="o">/</span><span class="p">(</span><span class="mi">3448</span><span class="o">+</span><span class="n">b</span><span class="p">)],</span> 
-        <span class="n">name</span><span class="o">=</span> <span class="s1">&#39; Consommation intensive secteur residentiel&#39;</span><span class="p">,</span>
-        <span class="n">marker_color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span>
-        <span class="n">hovertext</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Intensité de consommation en électricité: kWh par heure&#39;</span><span class="p">,</span> <span class="s1">&#39;Intensité de consommation de gaz en MJ par heure&#39;</span><span class="p">,</span>
-                   <span class="s1">&#39;Intensité de consommation du pétrole en MJ par heure&#39;</span><span class="p">,</span><span class="s1">&#39;Intensité de consommation en eau en L par heure&#39;</span>
-                  <span class="p">,</span><span class="s1">&#39;productivité économique en CHF/h&#39;</span><span class="p">]</span>
-     
-    
-            
-    <span class="p">)</span>
-       
-   
-    
-    <span class="n">data</span><span class="o">=</span> <span class="p">[</span><span class="n">bar</span><span class="p">,</span> <span class="n">bar1</span><span class="p">]</span>
-    
-    
-    <span class="n">iplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">show_link</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    
- 
-<span class="n">b</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">620</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">514</span><span class="p">,</span> <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;HA tert&quot;</span><span class="p">)</span>
-
-
-<span class="n">widgets</span><span class="o">.</span><span class="n">interactive</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
 
 <div class="output_area">
 
@@ -13571,53 +13632,7 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nbi</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s1">&#39;fanny1990/essai-depot&#39;</span><span class="p">,</span> <span class="s1">&#39;Codes Final Mémoire - Sliders-Copie.ipynb&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-3-cdc5f754ac05&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>nbi<span class="ansi-yellow-intense-fg ansi-bold">.</span>publish<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;fanny1990/essai-depot&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;Codes Final Mémoire - Sliders-Copie.ipynb&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\anaconda3\lib\site-packages\nbinteract\exporters.py</span> in <span class="ansi-cyan-fg">publish</span><span class="ansi-blue-intense-fg ansi-bold">(spec, nb_name, template, save_first)</span>
-<span class="ansi-green-fg">    192</span>         raise ValueError(
-<span class="ansi-green-fg">    193</span>             <span class="ansi-blue-intense-fg ansi-bold">&#34;{} isn&#39;t a path to a file. Double check your &#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 194</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-blue-intense-fg ansi-bold">&#34;filename and try again.&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>format<span class="ansi-yellow-intense-fg ansi-bold">(</span>nb_name<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    195</span>         )
-<span class="ansi-green-fg">    196</span> 
-
-<span class="ansi-red-intense-fg ansi-bold">ValueError</span>: Codes Final Mémoire - Sliders-Copie.ipynb isn&#39;t a path to a file. Double check your filename and try again.</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nbi</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s1">&#39;fanny1990/essai-depot&#39;</span><span class="p">,</span> <span class="s1">&#39;Final-copie.ipynb&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nbi</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s1">&#39;fanny1990/nbinteract-image&#39;</span><span class="p">,</span> <span class="s1">&#39;Final-copie.ipynb&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13635,10 +13650,10 @@ div#notebook {
 
 
 
-<div id="1a07fd80-33e7-4d5e-bc34-63cc0d6cc55d"></div>
+<div id="02f19726-343b-4ed7-b1b7-a43aa6a91c38"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1a07fd80-33e7-4d5e-bc34-63cc0d6cc55d');
+var element = $('#02f19726-343b-4ed7-b1b7-a43aa6a91c38');
 IPython.notebook.save_checkpoint();
 </script>
 </div>
@@ -13680,7 +13695,7 @@ IPython.notebook.save_checkpoint();
     }
 
     var interact = new window.NbInteract({
-      spec: 'fanny1990/essai-depot/master',
+      spec: 'fanny1990/nbinteract-image/master',
       baseUrl: 'https://mybinder.org',
       provider: 'gh',
     })
